@@ -1,12 +1,19 @@
-function limpar(id, valor, quantidade) {
+function adicionar() {
+    let produto = document.getElementById('produto').value;
+    let quantidade = document.getElementById('quantidade').value;
+    let nomeProduto = produto.split('-')[0];
+    let valorProduto = produto.split('R$')[1];
+    let preco = valorProduto * quantidade;
+
+
+    let carrinho = document.getElementById('lista-produtos');
+    carrinho.innerHTML = carrinho.innerHTML + `<section class="carrinho__produtos__produto">
+          <span class="texto-azul">${quantidade}x</span> ${nomeProduto} <span class="texto-azul">R$${preco}</span>
+        </section>`
 
 }
 
-function adicionar(id, valor, quantidade) {
-
+function limpar(carrinho) {
+    carrinho = '';
 }
-let produto = [
-    {id: 1, nome:'Fone de ouvido', valor: 100, quantidade: 0},
-    {id: 2, nome: 'Celular', valor: 1400, quantidade: 0},
-    {id: 3, nome:'Oculus VR', valor: 5000, quantidade: 0} 
-]
+
